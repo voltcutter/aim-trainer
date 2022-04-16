@@ -7,6 +7,8 @@
     <title>Aim Trainer</title>
 </head>
 <body>
+<p style="margin-left: auto; margin-right: auto; margin-top: 25px; display: block; font-family: Arial, Helvetica, sans-serif; text-align: center;">Checkbox Size</p>
+<input type="number" style="height: 25px; width: 75px; margin-left: auto; margin-right: auto; margin-top: 10px; display: block;" id="size">
 <input type="checkbox" style="height: 250px; width: 250px; position: fixed" id="target" onclick="goSomewhereElse();">
 <input type="checkbox" style="height: 250px; width: 250px; position: fixed" id="target2" onclick="goSomewhereElse2();">
 <input type="checkbox" style="height: 250px; width: 250px; position: fixed" id="target3" onclick="goSomewhereElse3();">
@@ -16,6 +18,13 @@ var checkbox = document.getElementById("target");
 var checkbox2 = document.getElementById("target2");
 var checkbox3 = document.getElementById("target3");
 
+var size = document.getElementById("size");
+
+function gunshotSound() {
+    var audio = new Audio('vine-boom (1).mp3');
+    audio.play();
+}
+
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
@@ -23,17 +32,29 @@ function getRndInteger(min, max) {
 function goSomewhereElse() {
     checkbox.style["top"] = getRndInteger(20, 80) + "%";
     checkbox.style["left"] = getRndInteger(20, 80) + "%";
+    checkbox.style["height"] = parseInt(size.value) + "px";
+    checkbox.style["width"] = parseInt(size.value) + "px";
+
     checkbox.checked = true;
+    gunshotSound();
 }
 function goSomewhereElse2() {
     checkbox2.style["top"] = getRndInteger(20, 80) + "%";
     checkbox2.style["left"] = getRndInteger(20, 80) + "%";
+    checkbox2.style["height"] = parseInt(size.value) + "px";
+    checkbox2.style["width"] = parseInt(size.value) + "px";
+
     checkbox2.checked = true;
+    gunshotSound();
 }
 function goSomewhereElse3() {
     checkbox3.style["top"] = getRndInteger(20, 80) + "%";
     checkbox3.style["left"] = getRndInteger(20, 80) + "%";
+    checkbox3.style["height"] = parseInt(size.value) + "px";
+    checkbox3.style["width"] = parseInt(size.value) + "px";
+
     checkbox3.checked = true;
+    gunshotSound();
 }
 //var theInterval = setInterval(checkCheckBox(), 100);
 </script>
