@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aim Trainer</title>
+</head>
+<body>
+<input type="checkbox" style="height: 250px; width: 250px; position: fixed" id="target" onclick="goSomewhereElse();">
+<input type="checkbox" style="height: 250px; width: 250px; position: fixed" id="target2" onclick="goSomewhereElse2();">
+<input type="checkbox" style="height: 250px; width: 250px; position: fixed" id="target3" onclick="goSomewhereElse3();">
+<script>
+
+var checkbox = document.getElementById("target");
+var checkbox2 = document.getElementById("target2");
+var checkbox3 = document.getElementById("target3");
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+function goSomewhereElse() {
+    checkbox.style["top"] = getRndInteger(20, 80) + "%";
+    checkbox.style["left"] = getRndInteger(20, 80) + "%";
+    checkbox.checked = true;
+}
+function goSomewhereElse2() {
+    checkbox2.style["top"] = getRndInteger(20, 80) + "%";
+    checkbox2.style["left"] = getRndInteger(20, 80) + "%";
+    checkbox2.checked = true;
+}
+function goSomewhereElse3() {
+    checkbox3.style["top"] = getRndInteger(20, 80) + "%";
+    checkbox3.style["left"] = getRndInteger(20, 80) + "%";
+    checkbox3.checked = true;
+}
+//var theInterval = setInterval(checkCheckBox(), 100);
+</script>
+</body>
+</html>
